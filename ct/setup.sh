@@ -223,3 +223,8 @@ catch_errors
 setting_up_container
 network_check
 update_os
+
+read -r -p "Deploy bash_aliases? <y/N> " prompt
+if [[ "${prompt,,}" =~ ^(y|yes)$ ]]; then
+
+fi
