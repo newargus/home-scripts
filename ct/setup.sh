@@ -224,6 +224,11 @@ clone_git_scripts() {
     msg_info "Installing CT Linux scripts repository on ${HOSTNAME} "
     apt-get install -y git &>/dev/null
     git clone https://github.com/newargus/home-scripts.git ./scripts &>/dev/null    
+    if grep -qF "$HOME/scripts/env/bash_aliases" .bashrc;then
+      echo "Found it"
+    else
+      echo "Sorry this string not in file"
+    fi
     msg_ok "CT Linux Linux Script repository installed ${HOSTNAME} "
 }
 
