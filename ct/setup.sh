@@ -223,7 +223,7 @@ network_check() {
 clone_git_scripts() {
     msg_info "Installing CT Linux scripts repository on ${HOSTNAME} "
     apt-get install -y git &>/dev/null
-    git clone https://github.com/newargus/home-scripts.git ./scripts &>/dev/null    
+    git clone https://github.com/newargus/home-scripts.git ./scripts
     if grep -qF "$HOME/scripts/env/bash_aliases" .bashrc;then
       echo -e "Found it"
     else
