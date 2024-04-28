@@ -7,7 +7,7 @@
 
 
 if [ -e "$HOME/.env" ]; then
-    source $HOME/.env
+    source "$HOME/.env";
 fi
 
 STD=""
