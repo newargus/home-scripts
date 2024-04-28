@@ -5,6 +5,8 @@
 # License: MIT
 # Base on tteck scripts https://github.com/tteck
 
+
+source $HOME/.env
 STD=""
 tz=Europe/Paris
 RETRY_NUM=3
@@ -120,8 +122,8 @@ setting_up_container1() {
   msg_info "Setting up Container OS"
   sed -i "/$LANG/ s/\(^# \)//" /etc/locale.gen
   locale-gen >/dev/null
-  echo $tz >/etc/timezone
-  ln -sf /usr/share/zoneinfo/$tz /etc/localtime
+  echo $TZ >/etc/timezone
+  ln -sf /usr/share/zoneinfo/$TZ /etc/localtime
   for ((i = RETRY_NUM; i > 0; i--)); do
     if [ "$(hostname -I)" != "" ]; then
       break
@@ -213,6 +215,13 @@ network_check() {
   if [[ -z "$RESOLVEDIP" ]]; then msg_error "DNS Lookup Failure"; else msg_ok "DNS Resolved github.com to ${BL}$RESOLVEDIP${CL}"; fi
   set -e
   trap 'error_handler $LINENO "$BASH_COMMAND"' ERR
+}
+
+clone_git_scripts () {
+    msg_info "Installing CT Linux scripts repository"
+    $STD apt-get install -y curl
+    git clone https://github.com/newargus/home-scripts.git ./scripts     
+    msg_ok "CT Linux Linux Script repository  installed"
 }
 
 
