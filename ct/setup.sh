@@ -219,7 +219,7 @@ network_check() {
 
 clone_git_scripts() {
     msg_info "Installing CT Linux scripts repository on ${HOSTNAME} "
-    apt-get install -y curl &>/dev/null
+    apt-get install -y git &>/dev/null
     git clone https://github.com/newargus/home-scripts.git ./scripts &>/dev/null    
     msg_ok "CT Linux Linux Script repository installed ${HOSTNAME} "
 }
