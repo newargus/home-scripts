@@ -234,4 +234,4 @@ network_check
 update_os
 clone_git_scripts
 
-read -r -p "Deploy bash_aliases? <y/N> " prompt
+
