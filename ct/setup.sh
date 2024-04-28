@@ -6,7 +6,7 @@
 # Base on tteck scripts https://github.com/tteck
 
 
-if [ -f "$HOME/.env"]; then
+if [ -e $HOME/.env ] then
     source $HOME/.env
 fi
 
