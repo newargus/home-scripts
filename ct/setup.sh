@@ -217,7 +217,7 @@ network_check() {
   trap 'error_handler $LINENO "$BASH_COMMAND"' ERR
 }
 
-clone_git_scripts () {
+clone_git_scripts() {
     msg_info "Installing CT Linux scripts repository"
     apt-get install -y curl
     git clone https://github.com/newargus/home-scripts.git ./scripts     
