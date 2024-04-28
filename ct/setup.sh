@@ -6,7 +6,7 @@
 # Base on tteck scripts https://github.com/tteck
 
 
-if [ -e $HOME/.env ] then
+if [ -e "$HOME/.env" ]; then
     source $HOME/.env
 fi
 
@@ -225,9 +225,9 @@ clone_git_scripts() {
     apt-get install -y git &>/dev/null
     git clone https://github.com/newargus/home-scripts.git ./scripts &>/dev/null    
     if grep -qF "$HOME/scripts/env/bash_aliases" .bashrc;then
-      echo "Found it"
+      echo -e "Found it"
     else
-      echo "Sorry this string not in file"
+      echo -e "Sorry this string not in file"
     fi
     msg_ok "CT Linux Linux Script repository installed ${HOSTNAME} "
 }
