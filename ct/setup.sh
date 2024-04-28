@@ -173,7 +173,7 @@ update_os() {
     msg_info "Updating ${HOSTNAME} LXC Container"
     apt-get update &>/dev/null
     apt-get -y upgrade &>/dev/null
-    apt-get -o Dpkg::Options::="--force-confold" -y dist-upgrade
+    apt-get -o Dpkg::Options::="--force-confold" -y dist-upgrade &>/dev/null
     msg_ok "Updating ${HOSTNAME} LXC Container"
 }
 
