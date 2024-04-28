@@ -6,7 +6,10 @@
 # Base on tteck scripts https://github.com/tteck
 
 
-source $HOME/.env
+if [ -f "$HOME/.env"]; then
+    source $HOME/.env
+fi
+
 STD=""
 tz=Europe/Paris
 RETRY_NUM=3
